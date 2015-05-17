@@ -4,8 +4,14 @@
 target
 bin
 
+# own backup folder
+backup
+
 # generated log file
 bankman.log
+
+# ide specific
+nbactions.xml
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/

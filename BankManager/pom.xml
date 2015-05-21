@@ -5,6 +5,11 @@
     <artifactId>bank-manager</artifactId>
     <version>1.0</version>
     <packaging>jar</packaging>
+    <name>Bank Manager</name>
+    <organization>
+        <name>University of Debrecen, Faculty of Informatics</name>
+    </organization>
+    <inceptionYear>2015</inceptionYear>
     <scm>
         <url>https://github.com/EvanWright/BankManagere</url>
         <connection>scm:git:git:/github.com/EvanWright/BankManager.git</connection>

@@ -13,7 +13,7 @@
     </scm>
     <description>
         Bank Manager is a bank management application.
-        This application provides a vast amount of functionalities such as opening accounts, money transactions and so on.
+        This application provides many functionalities such as opening accounts, money transaction and so on.
     </description>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

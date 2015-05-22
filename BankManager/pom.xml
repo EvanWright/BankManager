@@ -13,8 +13,7 @@
     <scm>
         <url>https://github.com/EvanWright/BankManagere</url>
         <connection>scm:git:git:/github.com/EvanWright/BankManager.git</connection>
-        <developerConnection>scm:git:git@github.com:EvanWright/BankManager.git.git</developerConnection>
-        <tag>HEAD</tag>
+        <developerConnection>scm:git:git@github.com:EvanWright/BankManager.git</developerConnection>
     </scm>
     <description>
         Bank Manager is a bank management application.

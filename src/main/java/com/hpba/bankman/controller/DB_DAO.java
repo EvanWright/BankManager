@@ -6,13 +6,17 @@ import java.util.*;
 
 /**
  * Data Access Object, which is used to get data from the remote/local database.
+ * <p>
+ * Methods get the connection from the
+ * {@link ConnectionFactory ConnectionFactory} class.
  *
  * @author generalhpba
  */
 public class DB_DAO {
 
     /**
-     * Query all accounts which belongs to the given user id.
+     * Query all {@link com.hpba.bankman.model.Account accounts} which belongs
+     * to the given user id.
      *
      * @param user_id a client's id number
      * @return the user's accounts
@@ -51,7 +55,8 @@ public class DB_DAO {
     }
 
     /**
-     * Query all entries which belongs to the given account number.
+     * Query all {@link com.hpba.bankman.model.Entry entries} which belongs to
+     * the given account number.
      *
      * @param number account number
      * @return history entries
@@ -75,7 +80,8 @@ public class DB_DAO {
     }
 
     /**
-     * Query the account and the type specific information too.
+     * Query the {@link com.hpba.bankman.model.Account account} and the type
+     * specific information too, which account number matches the given one.
      *
      * @param number account number
      * @return the queried account
@@ -116,7 +122,8 @@ public class DB_DAO {
     }
 
     /**
-     * Query the account.
+     * Query the {@link com.hpba.bankman.model.Account account} which account
+     * number matches the provided one.
      *
      * @param number account number
      * @return the queried account
@@ -184,7 +191,7 @@ public class DB_DAO {
     }
 
     /**
-     * Query Savings account type account.
+     * Query {@link com.hpba.bankman.model.Savings Savings account}.
      *
      * @param acc the base account
      * @return the savings account
@@ -208,7 +215,8 @@ public class DB_DAO {
     }
 
     /**
-     * Update account in the database using given account.
+     * Update {@link com.hpba.bankman.model.Account account} in the database
+     * using given {@link com.hpba.bankman.model.Account account}.
      *
      * @param acc the account
      * @return <code>true</code> if the update was successful;
@@ -348,7 +356,7 @@ public class DB_DAO {
     public static String getUpdateTermSQL(Term acc) {
         int res = acc.isLocked() ? 1 : 0;
         String start = acc.getLockStart() == null ? "null" : "'" + acc.getLockStart() + "'";
-        String end = acc.getLockEnd()== null ? "null" : "'" + acc.getLockEnd() + "'";
+        String end = acc.getLockEnd() == null ? "null" : "'" + acc.getLockEnd() + "'";
         return "UPDATE terms SET start=" + start
                 + ", end=" + end + ", is_locked=" + res
                 + ", interest=" + acc.getInterestRate()

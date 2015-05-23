@@ -1,11 +1,10 @@
 *.class
+.classpath
+.project
+.settings
 
 # Maven generated
 target
-bin
-
-# own backup folder
-backup
 
 # generated log file
 bankman.log

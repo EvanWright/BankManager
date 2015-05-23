@@ -10,7 +10,19 @@ import java.util.logging.*;
 import javax.swing.*;
 
 /**
- * Banking manager software.
+ * Banking management software.
+ * <p>
+ * This class contains the entry point. Also, the {@link Controller Controller}
+ * is initialized and started from here.
+ * <p>
+ * Loads Open Sans font and sets it as the default font for all swing components
+ * so there is no difference in the text size on varying operating systems.
+ * <p>
+ * <a href="https://www.google.com/fonts/specimen/Open+Sans">About Open Sans</a>
+ * <p>
+ * Sets the look and feel of the application.
+ * <p>
+ * <a href="http://www.jtattoo.net/">About JTatto</a>
  *
  * @author generalhpba
  */
@@ -27,7 +39,7 @@ public class BankMan {
     }
 
     /**
-     * The initialization of the class.
+     * The initialization method of this software.
      */
     private void init() {
         String fontName = "/OpenSans-Regular.ttf";

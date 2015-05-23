@@ -13,24 +13,34 @@ import java.sql.*;
 public class ConnectionFactory {
 
     /**
-     * The actual host's URL. Set with {@link #setRemote(boolean) setRemote}
-     * method.
+     * The actual host's URL.
+     * <p>
+     * Set with
+     * {@link #setConnection(java.lang.String, java.lang.String, java.lang.String) setConnection}
+     * setRemote} method.
      */
     private static String actDB_URL;
     /**
-     * The actual user. Set with {@link #setRemote(boolean) setRemote} method.
+     * The actual user.
+     * <p>
+     * Set with
+     * {@link #setConnection(java.lang.String, java.lang.String, java.lang.String) setConnection}
+     * method.
      */
     private static String actUSER;
     /**
-     * The actual user's password. Set with
-     * {@link #setRemote(boolean) setRemote} method.
+     * The actual user's password.
+     * <p>
+     * Set with
+     * {@link #setConnection(java.lang.String, java.lang.String, java.lang.String) setConnection}
+     * method.
      */
     private static String actPASS;
 
     /**
-     * Configures the connection.
+     * Configures the connection to the database.
      *
-     * @param url the database's URL address
+     * @param url the database's address
      * @param user the username
      * @param pass the password
      */
@@ -41,7 +51,7 @@ public class ConnectionFactory {
     }
 
     /**
-     * Create connection to the database.
+     * Creates a connection to the database.
      *
      * @return the created connection
      */
@@ -59,7 +69,8 @@ public class ConnectionFactory {
     }
 
     /**
-     * Calls the createConnection method and returns the connection.
+     * Calls the {@link #createConnection() createConnection} method and returns
+     * the {@link Connection Connection}.
      *
      * @return the connection
      */

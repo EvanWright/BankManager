@@ -500,7 +500,7 @@ public final class Controller {
                         switchToMain("");
                     } else {
                         switchToMain("");
-                        view.initInfo("Warning", "<html>Transfer amount can't be 0!</html>");
+                        view.initInfo("Warning", "<html>Given account doesn't exists!</html>");
                     }
                 } catch (Exception e) {
                     LOGGER.error("Exception during transfer", e);

@@ -39,7 +39,7 @@ public final class View extends JFrame {
     }
 
     public View(String title, Controller controller) {
-
+        
         glassPane.setBackground(new Color(128, 128, 128, 128));
         glassPane.addMouseListener(new MouseAdapter() {
             @Override

@@ -84,10 +84,13 @@ public final class Controller {
 
         if (args.length > 0) {
             for (String s : args) {
-                System.out.println(s);
                 if (s.equals("-l")) {
                     ConnectionFactory.setConnection(prop.getProperty("URL_l"),
                             prop.getProperty("USER_l"), prop.getProperty("PASS_l"));
+                }
+                if (s.equals("-s")) {
+                    ConnectionFactory.setConnection(prop.getProperty("URL_s"),
+                            prop.getProperty("USER_s"), prop.getProperty("PASS_s"));
                 }
             }
         } else {

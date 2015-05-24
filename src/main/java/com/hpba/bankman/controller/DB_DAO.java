@@ -3,6 +3,7 @@ package com.hpba.bankman.controller;
 import com.hpba.bankman.model.*;
 import java.sql.*;
 import java.util.*;
+import org.slf4j.*;
 
 /**
  * Data Access Object, which is used to get data from the remote/local database.
@@ -13,6 +14,11 @@ import java.util.*;
  * @author generalhpba
  */
 public class DB_DAO {
+
+    /**
+     * The logger.
+     */
+    static Logger LOGGER = LoggerFactory.getLogger(Controller.class);
 
     /**
      * Query all {@link com.hpba.bankman.model.Account accounts} which belongs
@@ -48,7 +54,7 @@ public class DB_DAO {
                 al.add(acc);
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            LOGGER.error("SQLException", e);
         }
 
         return al;
@@ -74,7 +80,7 @@ public class DB_DAO {
                 al.add(entry);
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            LOGGER.error("SQLException", e);
         }
         return al;
     }
@@ -115,7 +121,7 @@ public class DB_DAO {
                 return null;
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            LOGGER.error("SQLException", e);
         }
 
         return acc;
@@ -155,7 +161,7 @@ public class DB_DAO {
                 return null;
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            LOGGER.error("SQLException", e);
         }
 
         return acc;
@@ -184,7 +190,7 @@ public class DB_DAO {
                 term.setLocked(rs.getBoolean("is_locked"));
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            LOGGER.error("SQLException", e);
         }
 
         return term;
@@ -208,7 +214,7 @@ public class DB_DAO {
                 savings.setTransferLimit(rs.getInt("transfer_limit"));
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            LOGGER.error("SQLException", e);
         }
 
         return savings;
@@ -236,7 +242,7 @@ public class DB_DAO {
             conn.commit();
             return true;
         } catch (SQLException e) {
-            // log exception
+            LOGGER.error("SQLException", e);
             return false;
         }
     }
@@ -277,8 +283,7 @@ public class DB_DAO {
             }
             return true;
         } catch (SQLException e) {
-            // log exception
-            e.printStackTrace();
+            LOGGER.error("SQLException", e);
             return false;
         }
     }
@@ -310,12 +315,11 @@ public class DB_DAO {
                 conn.commit();
             } catch (SQLException e) {
                 conn.rollback();
-                e.printStackTrace();
+                LOGGER.error("SQLException", e);
             }
             return true;
         } catch (SQLException e) {
-            // log exception
-            e.printStackTrace();
+            LOGGER.error("SQLException", e);
             return false;
         }
     }
@@ -377,7 +381,7 @@ public class DB_DAO {
     }
 
     /**
-     * Updates data in database with the given Savings account.
+     * Updates data in database using the given Savings account.
      *
      * @param acc the Savings account
      * @return <code>true</code> if the update was successful;
@@ -394,13 +398,13 @@ public class DB_DAO {
             st.executeUpdate(query);
             return true;
         } catch (SQLException e) {
-            e.printStackTrace();
+            LOGGER.error("SQLException", e);
             return false;
         }
     }
 
     /**
-     * Updates data in database with the given Term account.
+     * Updates data in database using the given Term account.
      *
      * @param acc the Term account
      * @return <code>true</code> if the update was successful;
@@ -420,13 +424,13 @@ public class DB_DAO {
             st.executeUpdate(query);
             return true;
         } catch (SQLException e) {
-            e.printStackTrace();
+            LOGGER.error("SQLException", e);
             return false;
         }
     }
 
     /**
-     * Close (a.k.a. destroy) the given account.
+     * Close the given account.
      *
      * @param acc the account to be closed
      * @return <code>true</code> if the update was successful;
@@ -453,7 +457,7 @@ public class DB_DAO {
             conn.commit();
             return true;
         } catch (SQLException e) {
-            e.printStackTrace();
+            LOGGER.error("SQLException", e);
             return false;
         }
     }
@@ -476,7 +480,7 @@ public class DB_DAO {
             st.execute(query);
             return true;
         } catch (SQLException e) {
-            e.printStackTrace();
+            LOGGER.error("SQLException", e);
             return false;
         }
     }
@@ -503,7 +507,7 @@ public class DB_DAO {
             st.execute(query2);
             conn.commit();
         } catch (SQLException e) {
-            e.printStackTrace();
+            LOGGER.error("SQLException", e);
             return false;
         }
         return true;
@@ -531,7 +535,7 @@ public class DB_DAO {
             st.execute(query2);
             conn.commit();
         } catch (SQLException e) {
-            e.printStackTrace();
+            LOGGER.error("SQLException", e);
             return false;
         }
         return true;
@@ -556,7 +560,7 @@ public class DB_DAO {
                 return new String[]{String.valueOf(rs.getInt("id")), rs.getString("username")};
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            LOGGER.error("SQLException", e);
         }
 
         return null;
@@ -578,13 +582,13 @@ public class DB_DAO {
             st.execute(query);
             return true;
         } catch (SQLException e) {
-            e.printStackTrace();
+            LOGGER.error("SQLException", e);
             return false;
         }
     }
 
     /**
-     * Checks if the given username exists in the database.
+     * Checks if the given username already exists in the database.
      *
      * @param username the username
      * @return <code>true</code> if the user already exists in the database;
@@ -604,14 +608,14 @@ public class DB_DAO {
                 return true;
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            LOGGER.error("SQLException", e);
         }
 
         return false;
     }
 
     /**
-     * Checks if the given account exists in the database.
+     * Checks if the given account already exists in the database.
      *
      * @param number the account number
      * @return <code>true</code> if the account already exists in the database;
@@ -631,7 +635,7 @@ public class DB_DAO {
                 return true;
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            LOGGER.error("SQLException", e);
         }
         return false;
     }

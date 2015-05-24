@@ -9,6 +9,8 @@ import java.sql.*;
  * <a href="http://www.heliohost.org/">Heliohost</a>.
  *
  * @author generalhpba
+ * @version 1.0
+ * @since 1.0
  */
 public class ConnectionFactory {
 

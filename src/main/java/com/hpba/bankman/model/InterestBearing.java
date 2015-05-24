@@ -9,6 +9,8 @@ package com.hpba.bankman.model;
  * be set to 0.0%.
  *
  * @author generalhpba
+ * @version 1.0
+ * @since 1.0
  */
 public abstract class InterestBearing extends Account {
 

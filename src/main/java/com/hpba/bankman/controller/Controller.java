@@ -17,6 +17,8 @@ import org.slf4j.*;
  * including the database connection handling.
  *
  * @author generalhpba
+ * @version 1.0
+ * @since 1.0
  */
 public final class Controller {
 

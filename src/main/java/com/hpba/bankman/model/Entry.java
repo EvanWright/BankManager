@@ -8,6 +8,8 @@ import java.time.LocalDateTime;
  * The most usual operation is money transaction.
  *
  * @author generalhpba
+ * @version 1.0
+ * @since 1.0
  */
 public class Entry {
 

@@ -12,6 +12,8 @@ import org.slf4j.*;
  * {@link ConnectionFactory ConnectionFactory} class.
  *
  * @author generalhpba
+ * @version 1.0
+ * @since 1.0
  */
 public class DB_DAO {
 

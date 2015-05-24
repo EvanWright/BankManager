@@ -7,6 +7,8 @@ package com.hpba.bankman.model;
  * transfer counter resets the 1st day of each month.
  *
  * @author generalhpba
+ * @version 1.0
+ * @since 1.0
  */
 public class Savings extends InterestBearing {
 

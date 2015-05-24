@@ -13,6 +13,8 @@ import java.util.*;
  * </ul>
  *
  * @author generalhpba
+ * @version 1.0
+ * @since 1.0
  */
 public class Client {
 

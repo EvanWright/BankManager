@@ -10,6 +10,8 @@ import java.time.temporal.ChronoUnit;
  * has no access to the money.
  *
  * @author generalhpba
+ * @version 1.0
+ * @since 1.0
  */
 public class Term extends InterestBearing {
 

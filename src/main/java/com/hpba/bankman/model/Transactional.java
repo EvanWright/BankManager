@@ -7,6 +7,8 @@ package com.hpba.bankman.model;
  * interest.
  *
  * @author generalhpba
+ * @version 1.0
+ * @since 1.0
  */
 public class Transactional extends Account {
 

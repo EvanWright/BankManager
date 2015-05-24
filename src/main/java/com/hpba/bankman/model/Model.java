@@ -203,11 +203,11 @@ public class Model {
      */
     public int getTermCount() {
         int cnt = 0;
-            for (String s : getClient().getAccounts()) {
-                if (getAccount(s).getType().equals("Term Deposit")) {
-                    cnt++;
-                }
+        for (String s : getClient().getAccounts()) {
+            if (getAccount(s).getType().equals("Term Deposit")) {
+                cnt++;
             }
+        }
         return cnt;
     }
 

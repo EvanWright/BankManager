@@ -69,6 +69,11 @@ public class SavingsPanel extends AccountPanel {
             interest2.setText("$" + (int) interest);
             transferLimit2.setText("" + transfer_limit);
             transfersLeft2.setText("" + transfers_left);
+            if(transfers_left == 0) {
+                getTransferBtn().setEnabled(false);
+            } else {
+                getTransferBtn().setEnabled(true);
+            }
         }
     }
 }

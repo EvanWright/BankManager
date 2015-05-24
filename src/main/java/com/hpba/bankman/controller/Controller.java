@@ -416,6 +416,7 @@ public final class Controller {
      * Locks the currently selected term deposit account.
      */
     public void aTermLock() {
+        try {
         int length = Integer.valueOf(view.getTermPanel().getLockTimeTF().getText());
         if (length > 0) {
             Term act = (Term) model.getAccount();
@@ -425,6 +426,9 @@ public final class Controller {
             view.getTermPanel().lockDialog(Model.calcInterest(act, length), act.getBalance(), act.getLockEnd());
         } else {
             view.getTermPanel().lockDenyDialog();
+        }
+        } catch(NumberFormatException e) {
+            view.initInfo("Warning", "<html>Term length must be between 1 - 999!</html>");
         }
     }
 

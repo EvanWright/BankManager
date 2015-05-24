@@ -87,8 +87,7 @@ public final class Controller {
                 if (s.equals("-l")) {
                     ConnectionFactory.setConnection(prop.getProperty("URL_l"),
                             prop.getProperty("USER_l"), prop.getProperty("PASS_l"));
-                }
-                if (s.equals("-s")) {
+                } else if (s.equals("-s")) {
                     ConnectionFactory.setConnection(prop.getProperty("URL_s"),
                             prop.getProperty("USER_s"), prop.getProperty("PASS_s"));
                 }
@@ -417,17 +416,17 @@ public final class Controller {
      */
     public void aTermLock() {
         try {
-        int length = Integer.valueOf(view.getTermPanel().getLockTimeTF().getText());
-        if (length > 0) {
-            Term act = (Term) model.getAccount();
-            act.lock(length);
-            updateTerm();
-            DB_DAO.updateTerm(act);
-            view.getTermPanel().lockDialog(Model.calcInterest(act, length), act.getBalance(), act.getLockEnd());
-        } else {
-            view.getTermPanel().lockDenyDialog();
-        }
-        } catch(NumberFormatException e) {
+            int length = Integer.valueOf(view.getTermPanel().getLockTimeTF().getText());
+            if (length > 0) {
+                Term act = (Term) model.getAccount();
+                act.lock(length);
+                updateTerm();
+                DB_DAO.updateTerm(act);
+                view.getTermPanel().lockDialog(Model.calcInterest(act, length), act.getBalance(), act.getLockEnd());
+            } else {
+                view.getTermPanel().lockDenyDialog();
+            }
+        } catch (NumberFormatException e) {
             view.initInfo("Warning", "<html>Term length must be between 1 - 999!</html>");
         }
     }

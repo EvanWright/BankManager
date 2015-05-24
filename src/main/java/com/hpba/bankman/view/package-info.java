@@ -1,8 +1,8 @@
 /**
- * The Graphical User Interface.
+ * The Graphical User Interface, which handles all interaction between the user
+ * and the application.
  * <p>
- * Handles all interaction between the user and the application. It's main
- * component is the {@link View}.
+ * It's main component is the {@link com.hpba.bankman.view.View View}.
  *
  * @author generalhpba
  */

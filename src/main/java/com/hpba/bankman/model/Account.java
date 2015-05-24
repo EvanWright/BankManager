@@ -5,8 +5,9 @@ import java.util.*;
 /**
  * Default account type.
  * <p>
- * Base of all other account types. Stores account number, type, balance and
- * history entries.
+ * Base of all other account types.
+ * <p>
+ * Stores account number, type, balance and history entries.
  *
  * @see Transactional
  * @see Savings

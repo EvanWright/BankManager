@@ -11,7 +11,7 @@
     </organization>
     <inceptionYear>2015</inceptionYear>
     <scm>
-        <url>https://github.com/EvanWright/BankManagere</url>
+        <url>https://github.com/EvanWright/BankManager</url>
         <connection>scm:git:git:/github.com/EvanWright/BankManager.git</connection>
         <developerConnection>scm:git:git@github.com:EvanWright/BankManager.git</developerConnection>
     </scm>

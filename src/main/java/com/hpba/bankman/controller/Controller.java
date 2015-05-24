@@ -9,7 +9,9 @@ import java.util.*;
 import org.slf4j.*;
 
 /**
- * This class handles all interaction between the model and the view.
+ * This class handles all interaction between the
+ * {@link com.hpba.bankman.model model} and the
+ * {@link com.hpba.bankman.view view}.
  * <p>
  * The heart of the application, everything is controlled by this class,
  * including the database connection handling.
@@ -23,11 +25,11 @@ public final class Controller {
      */
     Logger LOGGER = LoggerFactory.getLogger(Controller.class);
     /**
-     * The pointer to the actual model.
+     * The pointer to the actual {@link com.hpba.bankman.model model}.
      */
     Model model;
     /**
-     * The pointer to the actual view.
+     * The pointer to the actual {@link com.hpba.bankman.view view}.
      */
     View view;
     /**
@@ -42,7 +44,8 @@ public final class Controller {
     }
 
     /**
-     * Constructor with model and view parameters.
+     * Constructor with {@link com.hpba.bankman.model model} and
+     * {@link com.hpba.bankman.view view} parameters.
      *
      * @param model the current model
      * @param view the current view
@@ -101,7 +104,8 @@ public final class Controller {
     };
 
     /**
-     * Loads data from the database.
+     * Loads data from the database into the
+     * {@link com.hpba.bankman.model model}.
      */
     Runnable rLoad = () -> {
         if (!isLoading) {
@@ -198,7 +202,9 @@ public final class Controller {
     }
 
     /**
-     * Updates the currently selected account in model from the view.
+     * Updates the currently selected account in the
+     * {@link com.hpba.bankman.model model} from the
+     * {@link com.hpba.bankman.view view}.
      */
     public void aSelectCurrent() {
         model.setCurrentAccount(view.getSelectedAccount());
@@ -316,7 +322,8 @@ public final class Controller {
     }
 
     /**
-     * Connects to the database.
+     * Connects to the database using the
+     * {@link ConnectionFactory ConnectionFactory}.
      *
      * @param retries number of failed connections
      */
@@ -350,7 +357,8 @@ public final class Controller {
     }
 
     /**
-     * Updates the main display with data from the model.
+     * Updates the main display with data from the
+     * {@link com.hpba.bankman.model model}.
      */
     void updateMain() {
         ArrayList<String> accs = new ArrayList<>();
@@ -420,10 +428,11 @@ public final class Controller {
     /**
      * Transfers money between two accounts.
      * <p>
-     * This is an action method, called from the view as a result of an
-     * interaction.
+     * This is an action method, called from the
+     * {@link com.hpba.bankman.view view} as a result of an interaction.
      * <p>
-     * The transaction data retrieved from the view:
+     * The transaction data retrieved from the
+     * {@link com.hpba.bankman.view view}:
      * <ul style="list-style-type:none">
      * <li>0 = Account number</li>
      * <li>1 = The desired amount</li>
@@ -588,7 +597,7 @@ public final class Controller {
     }
 
     /**
-     * Loads the model from the database.
+     * Loads the {@link com.hpba.bankman.model model} from the database.
      *
      * @param model target model
      */
@@ -603,7 +612,7 @@ public final class Controller {
     }
 
     /**
-     * Sets the currently active model.
+     * Sets the currently active {@link com.hpba.bankman.model model}.
      *
      * @param model model
      */
@@ -612,7 +621,7 @@ public final class Controller {
     }
 
     /**
-     * Sets the currently active view.
+     * Sets the currently active {@link com.hpba.bankman.view view}.
      *
      * @param view view
      */

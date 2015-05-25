@@ -1,8 +1,6 @@
 package com.hpba.bankman.view;
 
 import java.awt.*;
-import java.awt.event.*;
-import javafx.scene.input.KeyCode;
 import javax.swing.*;
 
 /**
